@@ -6,7 +6,7 @@ import Home from './components/Home';
 import Search from './components/Search';
 import { store } from './store/index';
 import {Provider} from 'react-redux';
-
+import viewPatient from './components/viewPatient';
 export default class App extends Component {
 
    
@@ -19,6 +19,7 @@ export default class App extends Component {
           <Route exact path="/" component={Home}></Route>
           <Route path="/search" component={Search}></Route>
           <Route path="/patient" component={AddPatient}></Route>
+          <Route path="/viewpatient" component={viewPatient}></Route>
       </Container>    
       </NativeRouter>
       </Provider>

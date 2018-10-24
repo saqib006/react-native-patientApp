@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import {View, Platform, StyleSheet } from 'react-native';
-import {Accordion, List, ListItem, Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text, Form, Item, Input, Label } from 'native-base';
-import axios from 'axios';
+import { List, ListItem, Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text} from 'native-base';
 import {connect} from 'react-redux';
 import patientAction from '../store/action/index';
-
+import {Link} from 'react-router-native';
 class Home extends Component {
 
     constructor(props){
@@ -51,9 +49,12 @@ class Home extends Component {
                     <Text>{value.name}</Text>
                   </Left>
                   <Right>
-                  <Button transparent>
+                  <Link to={{
+                    pathname:"/viewpatient",
+                    state:value
+                  }}>
                     <Icon name="arrow-forward" />
-                    </Button>
+                    </Link>
                   </Right>
                 </ListItem>
                 )
@@ -77,27 +78,6 @@ class Home extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-  margin:{
-    marginTop:5
-  }
-});
 const mapStateToProps = (state) => {
   return{
     patientList:state.patientReducer.patients

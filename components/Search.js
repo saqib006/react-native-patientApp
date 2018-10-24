@@ -1,7 +1,6 @@
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet } from 'react-native';
-import {List, ListItem, Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text, Form, Item, Input, Label } from 'native-base';
+import {List, ListItem, Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text, Item, Input, Label } from 'native-base';
 import {connect} from 'react-redux';
 import patientAction from '../store/action/index';
 import { Link } from'react-router-native';
@@ -14,8 +13,6 @@ class Search extends Component {
       this.state = {
         search:''
       }
-
-      
 
      
     }
@@ -86,7 +83,10 @@ class Search extends Component {
                     <Text>{value.name}</Text>
                   </Left>
                   <Right>
-                  <Link to="/">
+                  <Link to={{
+                    pathname:"/viewpatient",
+                    state:value
+                  }}>
                     <Icon name="arrow-forward" />
                     </Link>
                   </Right>
@@ -109,28 +109,6 @@ class Search extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-  margin:{
-    marginTop:5
-  }
-});
 
 const mapStateToProps = (state) => {
   return{

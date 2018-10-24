@@ -1,8 +1,6 @@
 // https://patientapi.herokuapp.com/api/patient
 import React, { Component } from 'react';
-import { Platform, StyleSheet } from 'react-native';
-import { List, ListItem, Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text, Form, Item, Input, Label } from 'native-base';
-import axios from 'axios';
+import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text, Form, Item, Input, Label } from 'native-base';
 import {connect} from 'react-redux';
 import patientAction from '../store/action/index';
  class AddPatient extends Component {
@@ -118,27 +116,6 @@ import patientAction from '../store/action/index';
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-  margin:{
-    marginTop:5
-  }
-});
 
 
 const mapDispatchToProps = (dispatch) => {
